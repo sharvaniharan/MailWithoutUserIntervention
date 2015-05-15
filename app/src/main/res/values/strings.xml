@@ -4,5 +4,9 @@
     <string name="app_name">MailWithoutUserIntervention</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="purpose">This App will send a mail to the address you specify</string>
+    <string name="hint1">Enter your Email</string>
+    <string name="sendBtn">Send me a mail</string>
+
 
 </resources>

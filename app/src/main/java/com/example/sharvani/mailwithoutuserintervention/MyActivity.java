@@ -10,9 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MyActivity extends Activity {
+    public static final String DEBUGTAG = "SHARVANI TESTING";
     public String emailProvided;
     public String message;
     public EditText email;
@@ -50,7 +52,7 @@ public class MyActivity extends Activity {
                message = "Hi , This is just to show how amazing Android is. It can send mails without user intervention";
 
                new AlertDialog.Builder(this)
-                       .setTitle("Email Reminder for Expiration")
+                       .setTitle("Email Sending Facility")
                        .setMessage(
                                "An email will be sent to "
                                        + emailProvided
@@ -60,7 +62,7 @@ public class MyActivity extends Activity {
                                    public void onClick(
                                            DialogInterface dialog,
                                            int which) {
-                                       // continue with delete
+                                       //positive response will trigger send action
                                        new MyAsyncTask().execute();
 
                                    }
@@ -92,7 +94,6 @@ public class MyActivity extends Activity {
             m.setBody(message);
 
             try {
-                // m.addAttachment("/sdcard/filelocation");
 
                 if (m.send()) {
 
@@ -100,10 +101,10 @@ public class MyActivity extends Activity {
 
                 }
             } catch (Exception e) {
-                // Toast.makeText(MailApp.this,
-                // "There was a problem sending the email.",
-                // Toast.LENGTH_LONG).show();
-                Log.e("MailApp", "Could not send email", e);
+                Toast.makeText(MyActivity.this,
+                        "There was a problem sending the email.",
+                        Toast.LENGTH_LONG).show();
+                Log.e(MyActivity.DEBUGTAG, "Could not send email", e);
             }
             return "SUCCESS";
 

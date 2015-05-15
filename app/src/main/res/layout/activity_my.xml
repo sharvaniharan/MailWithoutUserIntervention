@@ -9,7 +9,7 @@
     tools:context=".MyActivity">
 
     <TextView
-        android:text="This App will just send a mail to you"
+        android:text="@string/purpose"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:id="@+id/a" />
@@ -17,7 +17,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send Mail"
+        android:text="@string/sendBtn"
         android:id="@+id/button"
         android:onClick="sendMail"
         android:layout_centerHorizontal="true"
@@ -31,7 +31,7 @@
         android:id="@+id/editText3"
         android:layout_below="@+id/a"
         android:layout_centerHorizontal="true"
-        android:hint="Enter Email"/>
+        android:hint="@string/hint1" />
 
 
 </RelativeLayout>
